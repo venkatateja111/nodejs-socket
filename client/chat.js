@@ -1,6 +1,14 @@
 $(function () {
     //make connection
-    let socket = io.connect('http://localhost:5000');
+
+    
+
+    const socketURL =
+  process.env.NODE_ENV === 'production'
+    ? window.location.hostname
+    : 'https://localhost:5000';
+
+let socket = io.connect(socketURL, {secure: true});
 
     //buttons and inputs
     let message = $("#message");
