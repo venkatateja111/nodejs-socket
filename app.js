@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+var cors = require("cors");
 let randomColor = require('randomcolor');
 const uuid = require('uuid');
 
@@ -7,6 +8,7 @@ const uuid = require('uuid');
 app.disable('x-powered-by')
 
 //middlewares
+app.use(cors());
 app.use(express.static('client'));
 
 //routes
