@@ -3,10 +3,7 @@ $(function () {
 
     
 
-    const socketURL =
-  process.env.NODE_ENV === 'production'
-    ? window.location.hostname
-    : 'https://localhost:5000';
+    const socketURL = window.location.hostname;
 
 let socket = io.connect(socketURL, {secure: true});
 
